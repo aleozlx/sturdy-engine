@@ -1,0 +1,8 @@
+[package]
+name = "sturdy-engine"
+version = "0.1.0"
+authors = ["Alex Yang <aleozlx@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+pyo3 = "0.5"
