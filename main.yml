@@ -1,0 +1,24 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: debug-stdout-
+  namespace: bluecheese
+spec:
+  ttlSecondsAfterFinished: 20
+  template:
+    metadata:
+      name: bluecheese
+    spec:
+      containers:
+        - name: step
+          image: aleozlx/sturdy-engine
+          command: ["target/debug/sturdy-engine"]
+          imagePullPolicy: Always
+          env:
+          - name: PYTHONUNBUFFERED
+            value: "1"
+      restartPolicy: Never
+      nodeSelector:
+        workset: gpu
+  backoffLimit: 1

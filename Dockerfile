@@ -1,5 +1,4 @@
 FROM ubuntu:18.04
-MAINTAINER Alex Yang <aleozlx@gmail.com>
 
 # System dependencies
 RUN apt-get -y update && apt-get install -y build-essential python3-dev python3-pip
